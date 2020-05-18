@@ -20,4 +20,17 @@ ifneq ($(filter a3xelte a5xelte a7xelte gvwifi gvlte j7elte j7xlte s5neolte, $(T
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
+include $(CLEAR_VARS)
+
+EGL_LIBS := libOpenCL.so libOpenCL.so.1 libOpenCL.so.1.1
+
+EGL_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/lib/,$(EGL_LIBS))
+$(EGL_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "EGL lib link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf /vendor/lib/egl/libGLES_mali.so $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(EGL_SYMLINKS)
+
 endif
