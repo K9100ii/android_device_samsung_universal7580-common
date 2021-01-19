@@ -203,6 +203,10 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf \
     android.hardware.wifi@1.0-service.legacy
 
+# Public libraries
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+
 # Properties
 -include $(LOCAL_PATH)/system_prop.mk
 
