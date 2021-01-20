@@ -145,7 +145,14 @@
 /sys/devices/i2c.24/i2c-6/6-0030/leds(/.*)?             u:object_r:sysfs_light:s0
 
 # Wifi
-/sys/module/dhd/parameters/firmware_path            u:object_r:sysfs_wifi:s0
+/sys/module/dhd/parameters/firmware_path                u:object_r:sysfs_wifi:s0
+
+# Thermal
+/sys/devices/virtual/thermal(/.*)?                      u:object_r:sysfs_thermal:s0
+/sys/class/thermal(/.*)?                                u:object_r:sysfs_thermal:s0
+/sys/devices/virtual/hwmon(/.*)?                        u:object_r:sysfs_thermal:s0
+/sys/class/hwmon(/.*)?                                  u:object_r:sysfs_thermal:s0
+
 
 ####################################
 # deamons
