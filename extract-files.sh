@@ -65,4 +65,8 @@ setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${LINEAGE_ROOT}" true "${CLEAN_VEND
 extract "${MY_DIR}/proprietary-files.txt" "${SRC}" \
         "${KANG}" --section "${SECTION}"
 
+# Fix proprietary blobs
+BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE_COMMON"/proprietary
+patchelf --replace-needed libprotobuf-cpp-lite.so libprotobuf-cpp-fl26.so $BLOB_ROOT/vendor/lib/mediadrm/libwvdrmengine.so
+
 "${MY_DIR}/setup-makefiles.sh"
