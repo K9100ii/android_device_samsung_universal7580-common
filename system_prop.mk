@@ -23,7 +23,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=196610
+    ro.opengles.version=196610 \
+    debug.renderengine.backend=threaded
 
 # HWC
 PRODUCT_PROPERTY_OVERRIDES += \
