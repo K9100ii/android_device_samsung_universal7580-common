@@ -781,7 +781,7 @@ on fs
 
 # GPS
 service gpsd /vendor/bin/gpsd -c /vendor/etc/gps.xml
-    class main
+    class hal
     user gps
     group system wakelock inet net_raw
     ioprio be 0
