@@ -48,9 +48,6 @@ TARGET_CPU_VARIANT := cortex-a53
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 
-# Audio
-USE_XML_AUDIO_POLICY_CONF := 1
-
 # Binder
 TARGET_USES_64_BIT_BINDER := true
 
