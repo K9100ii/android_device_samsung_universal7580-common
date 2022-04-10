@@ -118,10 +118,6 @@ PRODUCT_PACKAGES += \
     libMcClient \
     libMcRegistry
 
-# Power
-PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-service.exynos
-
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.front.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
