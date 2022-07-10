@@ -48,6 +48,7 @@ TARGET_CPU_VARIANT := cortex-a53
 # Kernel
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
+TARGET_KERNEL_CLANG_COMPILE    := false
 
 # Binder
 TARGET_USES_64_BIT_BINDER := true
