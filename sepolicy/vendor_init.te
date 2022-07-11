@@ -1,0 +1,2 @@
+# modemloader
+get_prop(vendor_init, modemloader_prop)

@@ -36,6 +36,8 @@ allow gpsd gps_device:chr_file { setattr rw_file_perms };
 allow gpsd gps_data_file:dir rw_dir_perms;
 allow gpsd gps_data_file:fifo_file create_file_perms;
 
+dontaudit gpsd system_data_file:dir search;
+
 allow gpsd sysfs_wake_lock:file rw_file_perms;
 
 allow gpsd sensorservice_service:service_manager find;

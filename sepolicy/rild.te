@@ -58,3 +58,6 @@ allow rild media_rw_data_file:dir r_dir_perms;
 # /efs
 allow rild sec_efs_file:dir search;
 allow rild sec_efs_file:file r_file_perms;
+
+get_prop(rild, default_prop)
+get_prop(rild, system_prop)
