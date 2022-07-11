@@ -1,9 +1,9 @@
-import init.samsungexynos7580.usb.rc
-import init.baseband.rc
-import init.wifi.rc
-import init.samsung.rc
-import init.power.rc
-import init.target.rc
+import /vendor/etc/init/hw/init.samsungexynos7580.usb.rc
+import /vendor/etc/init/hw/init.baseband.rc
+import /vendor/etc/init/hw/init.wifi.rc
+import /vendor/etc/init/hw/init.samsung.rc
+import /vendor/etc/init/hw/init.power.rc
+import /vendor/etc/init/hw/init.target.rc
 
 on early-init
     mount debugfs /sys/kernel/debug /sys/kernel/debug mode=755
@@ -229,7 +229,7 @@ on boot
     chmod 0775 /dev/socket
 
 on fs
-    mount_all /fstab.samsungexynos7580
+    mount_all /vendor/etc/fstab.samsungexynos7580
     setprop ro.crypto.fuse_sdcard true
 
 # Permissions for ION
@@ -816,4 +816,4 @@ on charger
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor powersave
 
 on property:sys.boot_completed=1
-    swapon_all /fstab.samsungexynos7580
+    swapon_all /vendor/etc/fstab.samsungexynos7580
