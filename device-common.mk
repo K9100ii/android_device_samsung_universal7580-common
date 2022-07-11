@@ -201,7 +201,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.usb.config=none \
     ro.adb.secure=1 \
-    ro.secure=1
+    ro.secure=1 \
+    persist.adb.nonblocking_ffs=0 \
+    ro.adb.nonblocking_ffs=0
 
 # Public libraries
 PRODUCT_COPY_FILES += \
