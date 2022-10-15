@@ -21,14 +21,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.media_vol_steps=25 \
     ro.config.vc_call_vol_steps=7
 
-# Display
+# Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196610 \
+    ro.sf.blurs_are_expensive=1 \
+    debug.sf.latch_unsignaled=1 \
     debug.renderengine.backend=threaded
-
-# HWC
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.latch_unsignaled=1
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
