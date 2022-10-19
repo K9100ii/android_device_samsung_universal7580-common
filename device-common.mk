@@ -200,11 +200,8 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf \
     android.hardware.wifi@1.0-service.legacy
 
-# USB and ADB configuration
+# ADB configuration
 PRODUCT_PRODUCT_PROPERTIES += \
-    persist.sys.usb.config=none \
-    ro.adb.secure=1 \
-    ro.secure=1 \
     persist.adb.nonblocking_ffs=0 \
     ro.adb.nonblocking_ffs=0
 
