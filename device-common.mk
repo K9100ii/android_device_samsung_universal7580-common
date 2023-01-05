@@ -29,7 +29,9 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.service \
     android.hardware.audio@7.0-impl \
     android.hardware.audio.effect@7.0-impl \
-    android.hardware.bluetooth.audio@2.1-impl
+    android.hardware.bluetooth.audio@2.1-impl \
+    libaptX_encoder \
+    libaptXHD_encoder
 
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
