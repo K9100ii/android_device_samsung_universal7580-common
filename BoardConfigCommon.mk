@@ -17,7 +17,6 @@
 LOCAL_PATH := device/samsung/universal7580-common
 BUILD_TOP := $(shell pwd)
 
-BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # Include path
