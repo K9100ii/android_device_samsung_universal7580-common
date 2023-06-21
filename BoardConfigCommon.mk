@@ -83,7 +83,7 @@ TARGET_COPY_OUT_VENDOR := system/vendor
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
 # Samsung HALs
-TARGET_AUDIOHAL_VARIANT := samsung
+TARGET_AUDIOHAL_VARIANT := universal7580
 
 # Wifi
 BOARD_WLAN_DEVICE                := bcmdhd
