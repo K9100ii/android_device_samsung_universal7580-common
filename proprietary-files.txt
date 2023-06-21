@@ -1,9 +1,9 @@
 # all unpinned blobs come from SM-A510F stock (nougat)
 
 # Camera
-lib/libhwjpeg.so
-lib/libuniplugin.so
-lib/libsensorlistener.so
+-lib/libhwjpeg.so
+-lib/libuniplugin.so
+-lib/libsensorlistener.so
 
 # GPS - gpsd and gps.universal7580.so (originally gps.default.so) from T580XXS5CTD1
 # Modifications made to gpsd to get it to work:
@@ -12,19 +12,19 @@ lib/libsensorlistener.so
 #  * The android.hidl.base@1.0 dependency has been removed using patchelf:
 #  $ patchelf --remove-needed android.hidl.base@1.0.so gpsd
 # No modifications were made to gps.universal7580.so.
-vendor/bin/gpsd|a5910b1845af5c6f9fadd02eda93cda2
-lib/hw/gps.universal7580.so|526d98ad9f99aa67fb68268248609819
+-vendor/bin/gpsd|a5910b1845af5c6f9fadd02eda93cda2
+-lib/hw/gps.universal7580.so|526d98ad9f99aa67fb68268248609819
 bin/gps.cer:vendor/bin/gps.cer
-lib/libfloatingfeature.so
+-lib/libfloatingfeature.so
 
 # Graphics
-vendor/lib/egl/libGLES_mali.so
+-vendor/lib/egl/libGLES_mali.so
 
 # protobuf
 # precompiled from https://gitlab.com/Exynos7580/android_external_protobuf-compat-2.6
 # its the android N protobuf library slightly modified to avoid colissions with the incompatible
 # protobuf of Oreo and up
-lib/libprotobuf-cpp-fl26.so|f2436050b38e5acb63d36ad7b24a0c2612d68749
+-lib/libprotobuf-cpp-fl26.so|f2436050b38e5acb63d36ad7b24a0c2612d68749
 
 # Widevine
-vendor/lib/mediadrm/libwvdrmengine.so
+-vendor/lib/mediadrm/libwvdrmengine.so

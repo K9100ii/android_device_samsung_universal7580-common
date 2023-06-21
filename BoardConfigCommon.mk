@@ -17,8 +17,6 @@
 LOCAL_PATH := device/samsung/universal7580-common
 BUILD_TOP := $(shell pwd)
 
-BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
-
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
