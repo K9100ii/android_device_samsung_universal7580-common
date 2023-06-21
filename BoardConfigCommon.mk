@@ -32,11 +32,11 @@ TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
 # Platform
-TARGET_BOARD_PLATFORM := exynos5
-TARGET_SLSI_VARIANT := bsp
-TARGET_SOC := exynos7580
-TARGET_BOOTLOADER_BOARD_NAME := universal7580
 BOARD_VENDOR := samsung
+TARGET_BOARD_PLATFORM := universal7580
+TARGET_BOOTLOADER_BOARD_NAME := exynos7580
+TARGET_SOC := exynos7580
+include hardware/samsung_slsi-linaro/config/BoardConfig7580.mk
 
 # CPU
 TARGET_ARCH := arm
@@ -70,7 +70,6 @@ TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/config.fs
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 KERNEL_TOOLCHAIN := $(BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-android-4.9/bin
-TARGET_LINUX_KERNEL_VERSION := 3.10
 
 # Kernel config
 TARGET_KERNEL_SOURCE := kernel/samsung/universal7580
@@ -83,71 +82,11 @@ BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 # Vendor separation
 TARGET_COPY_OUT_VENDOR := system/vendor
 
-# Device Tree
-BOARD_USES_DT := true
-
 # Graphics
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
-BOARD_USES_EXYNOS5_COMMON_GRALLOC := true
-
-# VR Front buffer
-#BOARD_USES_VR_FRONT_BUFFER := true
-
-# Samsung OpenMAX Video
-BOARD_USE_STOREMETADATA := true
-BOARD_USE_METADATABUFFERTYPE := true
-BOARD_USE_DMA_BUF := true
-BOARD_USE_ANB_OUTBUF_SHARE := true
-BOARD_USE_IMPROVED_BUFFER := true
-BOARD_USE_NON_CACHED_GRAPHICBUFFER := true
-BOARD_USE_GSC_RGB_ENCODER := true
-BOARD_USE_CSC_HW := false
-BOARD_USE_QOS_CTRL := false
-BOARD_USE_S3D_SUPPORT := true
-BOARD_USE_TIMESTAMP_REORDER_SUPPORT := false
-BOARD_USE_DEINTERLACING_SUPPORT := false
-BOARD_USE_VP8ENC_SUPPORT := true
-BOARD_USE_HEVCDEC_SUPPORT := true
-BOARD_USE_HEVCENC_SUPPORT := true
-BOARD_USE_HEVC_HWIP := false
-BOARD_USE_VP9DEC_SUPPORT := true
-BOARD_USE_VP9ENC_SUPPORT := false
-BOARD_USE_CUSTOM_COMPONENT_SUPPORT := true
-BOARD_USE_VIDEO_EXT_FOR_WFD_HDCP := false
-BOARD_USE_SINGLE_PLANE_IN_DRM := false
-
-# HWComposer
-BOARD_USES_VPP := true
-#BOARD_USES_VPP_V2 := true // 8890 only
-BOARD_HDMI_INCAPABLE := true
-
-# Scalar
-BOARD_USES_SCALER := true
-
-# HWCServices - requires framework support
-#BOARD_USES_HWC_SERVICES := true
-
-# WiFiDisplay
-#BOARD_USES_VIRTUAL_DISPLAY := true - depends on platform changes
-BOARD_USES_VIRTUAL_DISPLAY_DECON_EXT_WB := false
-BOARD_USE_VIDEO_EXT_FOR_WFD_DRM := false
-BOARD_USES_VDS_BGRA8888 := true
-BOARD_VIRTUAL_DISPLAY_DISABLE_IDMA_G0 := false
-
-# LIBHWJPEG
-TARGET_USES_UNIVERSAL_LIBHWJPEG := true
-
-# FIMG2D
-BOARD_USES_SKIA_FIMGAPI := true
-BOARD_USES_FIMGAPI_V5X := true
-
-# SCALER
-BOARD_USES_DEFAULT_CSC_HW_SCALER := true
-BOARD_USES_SCALER_M2M1SHOT := true
 
 # Samsung HALs
 TARGET_AUDIOHAL_VARIANT := samsung
-TARGET_POWERHAL_VARIANT := samsung
 
 # Wifi
 BOARD_WLAN_DEVICE                := bcmdhd
@@ -179,7 +118,7 @@ BACKLIGHT_PATH := "/sys/class/backlight/panel/brightness"
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/etc/fstab.samsungexynos7580
 
 # SELinux
-BOARD_SEPOLICY_DIRS += device/samsung/universal7580-common/sepolicy 
+BOARD_SEPOLICY_DIRS += device/samsung/universal7580-common/sepolicy
 BOARD_SEPOLICY_VERS := $(PLATFORM_SDK_VERSION).0
 
 # Soong namespaces
