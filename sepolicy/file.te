@@ -1,4 +1,4 @@
-### efs types
+# efs types
 type app_efs_file, file_type;
 type battery_efs_file, file_type;
 type baro_delta_factoryapp_efs_file, file_type;
@@ -20,7 +20,7 @@ type wifi_efs_file, file_type;
 type gps_data_file, file_type, data_file_type, core_data_file_type;
 type gps_socket, file_type;
 
-# proc
+# proc types
 type proc_vm, fs_type, proc_type;
 type proc_dt_firmware, fs_type, proc_type;
 type proc_reset_reason, fs_type, proc_type;
@@ -28,8 +28,11 @@ type proc_simslot_count, fs_type, proc_type;
 type proc_input_devices, fs_type, proc_type;
 type proc_sec, fs_type, proc_type;
 
-### sysfs types
-#type sysfs_writable, fs_type, sysfs_type, mlstrustedobject;
+# debugfs types
+type debugfs_ion, debugfs_type, fs_type;
+type debugfs_mali, debugfs_type, fs_type;
+
+# sysfs types
 type sysfs_mdnie, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_mipi, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_multipdp, fs_type, sysfs_type, mlstrustedobject;
@@ -46,7 +49,7 @@ type sysfs_graphics, sysfs_type, fs_type, mlstrustedobject;
 type sysfs_jack, sysfs_type, fs_type, mlstrustedobject;
 type sysfs_v4l, sysfs_type, fs_type, mlstrustedobject;
 
-### data types
+# data file types
 type display_vendor_data_file, file_type, data_file_type;
 type mediadrm_vendor_data_file, file_type, data_file_type;
 type log_vendor_data_file, file_type, data_file_type;
