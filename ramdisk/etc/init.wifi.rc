@@ -40,16 +40,4 @@ on boot
     # Pcie WiFi T-put setting
     write /sys/class/net/wlan0/queues/rx-0/rps_cpus 00
 
-    #write /proc/sys/net/ipv4/tcp_adv_win_scale 2
-
-# Run deferred initcalls of builtin kernel modules (bcmdhd)
-service wifiloader /vendor/bin/wifiloader
-    class main
-    oneshot
-
 # end of WiFi MFG (TestMode)
-
-#service olsrd /system/bin/olsrd -f /etc/wifi/olsrd.conf
-#    class main
-#    disabled
-#    oneshot
