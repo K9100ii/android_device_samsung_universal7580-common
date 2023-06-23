@@ -12,13 +12,18 @@
 #  * The android.hidl.base@1.0 dependency has been removed using patchelf:
 #  $ patchelf --remove-needed android.hidl.base@1.0.so gpsd
 # No modifications were made to gps.universal7580.so.
--vendor/bin/gpsd|a5910b1845af5c6f9fadd02eda93cda2
+-vendor/bin/hw/gpsd|a5910b1845af5c6f9fadd02eda93cda2
 -lib/hw/gps.universal7580.so|526d98ad9f99aa67fb68268248609819
 bin/gps.cer:vendor/bin/gps.cer
--lib/libfloatingfeature.so
 
 # Graphics
 -vendor/lib/egl/libGLES_mali.so
+
+# libfloatingfeature.so - From T515XXU8CVL1
+-vendor/lib/libfloatingfeature.so|eff6cbf9617b06ae65718282320c5d4fb4cb84cc
+
+# libsecnativefeature - From T515XXU8CVL1
+-vendor/lib/libsecnativefeature.so|268dfdbb80196ac0d16abcce9109f87518753361
 
 # protobuf
 # precompiled from https://gitlab.com/Exynos7580/android_external_protobuf-compat-2.6

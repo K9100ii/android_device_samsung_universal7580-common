@@ -7,6 +7,12 @@ on init
     setprop installd.sdcard_manipulate_done 0
 
 on post-fs-data
+    exec u:r:vendor_toolbox:s0 -- /vendor/bin/toybox_vendor find /efs -type d \
+        -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
+    chown radio system /efs
+    chmod 0771 /efs
+    restorecon_recursive /efs
+
     # Latin SSMS feature
     mkdir /efs/SMS 0775 radio system
 

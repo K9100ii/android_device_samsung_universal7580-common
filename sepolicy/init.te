@@ -58,9 +58,6 @@ allow init gps_device:chr_file { open read write };
 # CPU permissions
 allow init sysfs_devices_system_cpu:file rw_file_perms;
 
-# umts permissions
-allow init mif_device:chr_file rw_file_perms;
-
 # Block device sysfs
 allow init sysfs_block:file rw_file_perms;
 

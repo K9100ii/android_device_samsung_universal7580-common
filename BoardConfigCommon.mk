@@ -20,10 +20,6 @@ BUILD_TOP := $(shell pwd)
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
-ifneq ($(TARGET_DEVICE), gvwifi)
-TARGET_SPECIFIC_HEADER_PATH += $(LOCAL_PATH)/ril/include
-endif
-
 # Firmware
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
@@ -129,6 +125,4 @@ TARGET_HAS_MEMFD_BACKPORT := true
 
 # Shim
 TARGET_LD_SHIM_LIBS += \
-    /system/bin/mediaserver|/system/lib/libstagefright_shim.so \
-    /system/lib/libsec-ril.so|/vendor/lib/libcutils_shim.so \
-    /system/lib/libsec-ril-dsds.so|/vendor/lib/libcutils_shim.so
+    /system/bin/mediaserver|/system/lib/libstagefright_shim.so

@@ -156,7 +156,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     init.power.rc \
     fstab.samsungexynos7580 \
-    init.baseband.rc \
     init.samsung.rc \
     init.samsungexynos7580.rc \
     init.samsungexynos7580.usb.rc \
@@ -171,10 +170,6 @@ PRODUCT_PACKAGES += \
 # SamsungDoze
 PRODUCT_PACKAGES += \
     SamsungDoze
-
-# SEC
-PRODUCT_PACKAGES += \
-    libsecnativefeature
 
 # Seccomp filters
 PRODUCT_COPY_FILES += \

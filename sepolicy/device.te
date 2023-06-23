@@ -4,11 +4,9 @@ type bluetooth_device, dev_type;
 # /dev/block/mmcblk0p[0-9] (/dev/mbin0)
 type emmcblk_device, file_type;
 
-# Radio block device mounted on /efs.
+# Radio
 type radio_block_device, dev_type;
-
-# /dev/umts_boot*, /dev/ehci_power
-type mif_device, dev_type;
+type vendor_radio_device, dev_type;
 
 # /dev/rfkill
 type rfkill_device, dev_type;
@@ -24,9 +22,6 @@ type fingerprint_device, dev_type;
 
 # /dev/batch_io
 type sensor_device, dev_type;
-
-# /dev/i2c-20 - TFA98xx amplifier
-type amplifier_device, dev_type;
 
 # GPS
 type gps_device, dev_type;

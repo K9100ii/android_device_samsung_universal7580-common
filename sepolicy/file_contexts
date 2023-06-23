@@ -17,10 +17,11 @@
 /dev/media[0-3]*             u:object_r:camera_device:s0
 /dev/m2m1shot_jpeg           u:object_r:camera_device:s0
 
-/dev/__cbd_msg_              u:object_r:mif_device:s0
-/dev/umts.*                  u:object_r:mif_device:s0
-/dev/ehci_power              u:object_r:mif_device:s0
-/dev/mipi-lli/lli_control    u:object_r:mif_device:s0
+/dev/umts_boot0              u:object_r:vendor_radio_device:s0
+/dev/umts_ipc[0-1]           u:object_r:vendor_radio_device:s0
+/dev/umts_dm0                u:object_r:vendor_radio_device:s0
+/dev/umts_rfs0               u:object_r:vendor_radio_device:s0
+/dev/umts_router             u:object_r:vendor_radio_device:s0
 
 /dev/gnss_ipc                u:object_r:gps_device:s0
 /dev/ttySAC[0-1]*            u:object_r:gps_device:s0
@@ -52,9 +53,6 @@
 
 /dev/batch_io                u:object_r:sensor_device:s0
 /dev/ssp_sensorhub           u:object_r:sensor_device:s0
-
-# TFA98xx amplifier
-/dev/i2c-0                   u:object_r:amplifier_device:s0
 
 ####################################
 # efs files
@@ -98,6 +96,11 @@
 
 # camera
 /data/camera/ISP_CV          u:object_r:camera_data_file:s0
+
+# Radio
+/data/vendor/log(/.*)?       u:object_r:log_vendor_data_file:s0
+/data/vendor/log/cbd(/.*)?   u:object_r:log_cbd_vendor_data_file:s0
+/data/vendor/secradio(/.*)?  u:object_r:radio_vendor_data_file:s0
 
 ####################################
 # sysfs files
@@ -157,20 +160,19 @@
 # deamons
 #
 
-/(vendor|system/vendor)/bin/mcDriverDaemon   u:object_r:tee_exec:s0
-/(vendor|system/vendor)/bin/modemloader      u:object_r:modemloader_exec:s0
-/(vendor|system/vendor)/bin/wifiloader       u:object_r:wifiloader_exec:s0
+/(vendor|system/vendor)/bin/mcDriverDaemon                                                      u:object_r:tee_exec:s0
+/(vendor|system/vendor)/bin/wifiloader                                                          u:object_r:wifiloader_exec:s0
 
-/(vendor|system/vendor)/bin/cbd              u:object_r:cpboot-daemon_exec:s0
-/(vendor|system/vendor)/bin/gpsd             u:object_r:gpsd_exec:s0
+/(vendor|system/vendor)/bin/cbd                                                                 u:object_r:cbd_exec:s0
+/(vendor|system/vendor)/bin/secril_config_svc                                                   u:object_r:secril_config_svc_exec:s0
 
-/(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.samsung-exynos    u:object_r:hal_lineage_livedisplay_sysfs_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.samsung                 u:object_r:hal_lineage_touch_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.4-service\.clearkey                u:object_r:hal_drm_clearkey_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.light-service\.samsung                    u:object_r:hal_light_default_exec:s0
+/(vendor|system/vendor)/bin/hw/gpsd                                                             u:object_r:gpsd_exec:s0
+
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.samsung-exynos        u:object_r:hal_lineage_livedisplay_sysfs_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.samsung                     u:object_r:hal_lineage_touch_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.4-service\.clearkey                    u:object_r:hal_drm_clearkey_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.light-service\.samsung                        u:object_r:hal_light_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.samsung u:object_r:hal_fingerprint_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.nfc@1\.2-service\.samsung                 u:object_r:hal_nfc_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator-service\.samsung                 u:object_r:hal_vibrator_default_exec:s0
-
-# Gatekeeper
-/(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service\.software			u:object_r:hal_gatekeeper_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.nfc@1\.2-service\.samsung                     u:object_r:hal_nfc_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator-service\.samsung                     u:object_r:hal_vibrator_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service\.software             u:object_r:hal_gatekeeper_default_exec:s0

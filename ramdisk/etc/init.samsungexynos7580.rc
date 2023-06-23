@@ -1,10 +1,3 @@
-import /vendor/etc/init/hw/init.samsungexynos7580.usb.rc
-import /vendor/etc/init/hw/init.baseband.rc
-import /vendor/etc/init/hw/init.wifi.rc
-import /vendor/etc/init/hw/init.samsung.rc
-import /vendor/etc/init/hw/init.power.rc
-import /vendor/etc/init/hw/init.target.rc
-
 on early-init
     mount debugfs /sys/kernel/debug /sys/kernel/debug mode=755
 
@@ -34,8 +27,6 @@ on init
     setprop ro.boot.hardware.revision ${ro.boot.hw_rev}
 
 on post-fs-data
-#    mkdir /data/media 0770 media_rw media_rw
-
     setprop vold.post_fs_data_done 1
 
 # Permissions for audio
@@ -783,7 +774,7 @@ on fs
     chown system radio /sys/class/sensors/irled_remote/irled_send_result
 
 # GPS
-service gpsd /vendor/bin/gpsd -c /vendor/etc/gps.xml
+service gpsd /vendor/bin/hw/gpsd -c /vendor/etc/gps.xml
     class hal
     user gps
     group system wakelock inet net_raw
