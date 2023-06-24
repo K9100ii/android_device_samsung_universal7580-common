@@ -53,10 +53,9 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-service \
     libcsc
 
-# Configstore
+# ConfigStore
 PRODUCT_PACKAGES += \
-    android.hardware.configstore@1.0-impl \
-    android.hardware.configstore@1.0-service
+    disable_configstore
 
 # Control groups and task profiles
 PRODUCT_COPY_FILES += \

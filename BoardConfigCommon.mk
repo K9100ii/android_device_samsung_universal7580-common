@@ -75,9 +75,6 @@ BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 # Vendor separation
 TARGET_COPY_OUT_VENDOR := system/vendor
 
-# Graphics
-NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
-
 # Samsung HALs
 TARGET_AUDIOHAL_VARIANT := universal7580
 
