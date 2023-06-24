@@ -12,8 +12,8 @@
 #  * The android.hidl.base@1.0 dependency has been removed using patchelf:
 #  $ patchelf --remove-needed android.hidl.base@1.0.so gpsd
 # No modifications were made to gps.universal7580.so.
--vendor/bin/hw/gpsd|a5910b1845af5c6f9fadd02eda93cda2
--lib/hw/gps.universal7580.so|526d98ad9f99aa67fb68268248609819
+-vendor/bin/hw/gpsd|2113b4c1bc6b425e9f83d0ce4ac35525dedc739f
+-vendor/lib/hw/gps.universal7580.so|3ce5a92d27eeb252a685e66b03592b57ad5f595e
 bin/gps.cer:vendor/bin/gps.cer
 
 # Graphics
@@ -29,7 +29,7 @@ bin/gps.cer:vendor/bin/gps.cer
 # precompiled from https://gitlab.com/Exynos7580/android_external_protobuf-compat-2.6
 # its the android N protobuf library slightly modified to avoid colissions with the incompatible
 # protobuf of Oreo and up
--lib/libprotobuf-cpp-fl26.so|f2436050b38e5acb63d36ad7b24a0c2612d68749
+-vendor/lib/libprotobuf-cpp-fl26.so|499f8050f9401339ef53c9c140cf64319d325e7f
 
 # Widevine
 -vendor/lib/mediadrm/libwvdrmengine.so
