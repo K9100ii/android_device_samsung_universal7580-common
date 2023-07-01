@@ -91,6 +91,11 @@ PRODUCT_PACKAGES += \
     hwcomposer.exynos7580 \
     libhwc2on1adapter
 
+# HIDL
+PRODUCT_PACKAGES += \
+    libhidltransport \
+    libhwbinder
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-impl \
