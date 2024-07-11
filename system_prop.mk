@@ -59,3 +59,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.soc.manufacturer=Samsung \
     ro.soc.model=Exynos7580
+
+# Do not update the recovery image
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.recovery_update=false
