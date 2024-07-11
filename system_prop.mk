@@ -47,10 +47,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     net.tcp.default_init_rwnd=60
 
-# System
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.binary_xml=false
-
 # BPF
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.kernel.ebpf.supported=false
